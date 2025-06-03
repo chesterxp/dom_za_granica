@@ -1,0 +1,236 @@
+/* 
+
+--- 01 TOPOGRAPHHY SYSTEM
+
+Font size system (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+--- 02 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+- Font weights:
+Default: 400
+Medium:500
+Semi-bold:600
+Bold: 700
+ExtraBold: 800
+
+- Line heights:
+Default: 1
+Small: 1.05
+Medium: 1.2
+Parafraf default: 1.6
+
+- Letter spacing
+-0,5px
+0.75px
+
+
+
+--- 03 COLORS
+
+- Primary: #fff #312622 #756560 #538b09 #3a6106 #4b7d08 #b58e71 #a38066
+- Tints:  
+- Shades: 
+- Accents:
+- Greys:  #333 #444 #777 #d3d1d1 #767676 #8d8c8c
+
+
+--- 04 SHADIWS
+
+--- 05 BORDER RADIUS
+Default: 0.9rem
+
+CAR LOGO 
+https://app.logomakr.com/94aefz
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 
+  CHANGING THE FONT FROM PX TO REM
+  !!!   1trem = 16px   !!! */
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  /* overflow-x: hidden --> means that all elements that extend beyond the X axis will be hidden, BUT at the same time we must add: 'position: relative' in the 'header' / Only works if there is nothing absolutely positioned in relation to body*/
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* font-family: "Rubik", sans-serif; */
+  line-height: 1.5;
+  /* font-weight: 400; */
+  color: #222;
+  /* FONT */
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Removed 'focused field' - blue frame of buttons visible when pressed */
+*:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 0.5rem rgba(224, 238, 205, 0.5); */
+}
+
+.hidden-item {
+  visibility: hidden;
+  letter-spacing: 0.1px;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #3a6106;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.heading-primary {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-bottom: 2.4rem;
+  color: #333;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 6.4rem;
+  font-weight: 800;
+  color: #333;
+  letter-spacing: 1.5px;
+}
+
+.heading-tertiary {
+  font-size: 2.4rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #3a6106;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.2rem;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(
+    to right,
+    #312622,
+    #756560,
+    #b58e71,
+    #538b09,
+    #3a6106
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.icon {
+  z-index: 0;
+}
+
+.btn:link,
+.btn:visited {
+  /*each button should be added as 'display: inline-block', which is often used to keep elements inline, but this does not limit the use of margins, padding and other styles. /// ('display: inline' is used to make the button behave like inline text elements, which means that other elements can appear next to them without any gaps. But this limits the ability to set padding and margins and other styling properties.) display: inline – causes the element to be displayed as a linear element. display: block – the element will be displayed as a block element. display: inline-block – combines the features of linear and block elements. */
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1rem 3.2rem;
+  border-radius: 1rem;
+  justify-content: center;
+}
+
+/* A UNIVERSAL GRID/CONTAINER THAT WILL BE USED THROUGHOUT THE ENTIRE PROJECT */
+
+.container {
+  max-width: 120rem;
+  /* 120rem because 1200px or 1140px is considered standard on websites */
+  margin: 0 auto;
+  /* margin: 0 auto because these values are accepted as standard on websites */
+  padding: 0 3.2rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 5.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  /* grid-center-verticly - we use it as an auxiliary class to center all the elements in the grid container class boxes in the "How-It-Works" section */
+  align-items: center;
+}
+
+/* *******   OTHER      ******* */
+
+.center-text {
+  text-align: center;
+}
+
+/* MODAL WINDOW */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 455%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}

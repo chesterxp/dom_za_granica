@@ -1,0 +1,1201 @@
+/* *************************** */
+/* NAV SECTION */
+/* *************************** */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  /* Because we want the nav to be 'sticky' (it will move when we scroll along with the page), we set the height and padding: */
+  height: 8rem;
+  padding: 0 4.8rem;
+  position: relative;
+  border-bottom: 2px solid #333;
+
+  /* !!! OTHER OPTION - Pinned NAV while scrolling !!! */
+  /* position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999; */
+}
+
+div#fixed_header {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: #fff;
+}
+
+.logo {
+  width: 75%;
+}
+
+.logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-main {
+  justify-content: center;
+  align-items: center;
+}
+
+.img-main-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  margin-right: 6rem;
+}
+
+.main-nav-list span {
+  color: #538b09;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #111;
+}
+
+.main-nav-list span:hover,
+.main-nav-list span:active {
+  color: #426f07;
+}
+
+/*  ***  LANGUAGE VERSIONS ***  */
+
+.element:link,
+.element:visited {
+  width: 5rem;
+  font-size: 1.8rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.element:hover,
+.element:active {
+  color: #111;
+}
+
+.element:nth-child(2) {
+  color: #538b09;
+  font-weight: 600;
+}
+
+.element:first-child {
+  border-right: 1px solid #333;
+  font-weight: 600;
+}
+
+/* *** MOBILE NAV BTN *** */
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  /* by default with normal widt '.btn-mobile-nav' must be ;display: none; */
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* STICKY NAVIGATION */
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 246, 216, 0.938);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.04);
+}
+
+.sticky .section-main {
+  margin-top: 10rem;
+}
+
+/* *************************** */
+/* VIDEO SECTION */
+/* *************************** */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero h1,
+.hero h2 {
+  text-align: center;
+  font-family: Trebuchet MS;
+  /* background-color: #fff; */
+  z-index: 1;
+  opacity: 0.7;
+  padding: 0 2.2rem;
+}
+
+.hero-btn {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+#background-video {
+  /* width: 100vw;
+  height: 100vh; */
+  object-fit: cover;
+  /* position: fixed; */
+  /* left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  min-height: 50%;
+  min-width: 50%;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.24);
+  width: 100%;
+  height: 100vh;
+}
+
+/* *************************** */
+/* MAIN SECTION */
+/* *************************** */
+.section-main {
+  /* If we have background-color set, we use padding to make spaces */
+  padding: 8rem 0;
+  background: #eef3e6;
+}
+
+.main {
+  column-gap: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* MAIN BOX TEXT + SLIDE */
+.main-text {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 4.2rem;
+}
+
+.text-box {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.hero-rs {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-bottom: 2.4rem;
+  color: #555;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+/* *** Satisfied customers *** */
+
+.guests {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6rem;
+}
+
+.guests-imgs {
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.guests-imgs img {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.5rem;
+  border: 3px solid #eef3e6;
+}
+
+.guests-imgs img:last-child {
+  margin: 0;
+}
+
+.guests-text {
+  margin-left: 1.8rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.guests-text span {
+  color: #538b09;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* *** IMAGE AUTO SLIDER *** */
+.slide-box {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.arrow {
+  height: 60px;
+  cursor: pointer;
+}
+
+.right {
+  transform: rotate(180deg);
+}
+
+.frame {
+  width: 640px;
+  height: 340px;
+  overflow: hidden;
+  /* box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5); */
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+  display: flex;
+  transition: all 1s ease;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottom {
+  display: flex;
+  gap: 30px;
+}
+
+.button {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #538b09;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* *************************** */
+/* FEATURED-IN SECTION */
+/* *************************** */
+
+.section-featured {
+  /* frames up/down 4.8rem, right/left 0rem */
+  padding: 3.2rem 0 4.8rem 0;
+}
+
+.heading-featured-in {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+.logos img {
+  height: 7rem;
+  /*  code that allows you to edit photos/images and subtitles, e.g.: widening/blurring/color saturation/changing brightness, etc. */
+  filter: brightness(0);
+  opacity: 50%;
+}
+
+/* *************************** */
+/* ABOUT SECTION */
+/* *************************** */
+
+.section-about {
+  display: grid;
+  /* instead of 1fr you can write 55fr 45fr which corresponds to the 55%/45% division */
+  grid-template-columns: 45% 55%;
+}
+
+.about {
+  padding-top: 3rem;
+}
+
+.about-text-box {
+  padding: 8rem;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-text p {
+  font-size: 1.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+  margin-bottom: 6.4rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  color: #382a1e;
+  font-style: italic;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+/* *** GALLERY *** */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem 0;
+}
+
+.gallery-item {
+  /* ZMIENNA do HOOVER EFFECT: */
+  overflow: hidden;
+}
+
+.gallery-item img {
+  /* aby wyelimonować przerwy między zdjęciami ustawiamy display: block */
+  display: block;
+  /* dodajemy width: 100% aby zdjęcia były flexible w trakcie zmniejszania/zwiększania przeglądarki */
+  width: 100%;
+  /* HOOVER EFFECT option */
+  transition: all 0.4s;
+}
+
+/* HOOVER EFFECT */
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/* *************************** */
+/* BOOKING SECTION */
+/* *************************** */
+
+.section-booking {
+  padding: 6.4rem 0;
+  margin-bottom: 4.8rem;
+}
+
+.booking-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.booking {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 1.1rem;
+  /* gdy zdjęcie jest kwadratowe, a shaddow pod zdjęciem okrągłe, to zamiast edytować zdjęcie wystarczy zrobić overflow: hidden i wszystko co nachodziło na shaddow będzie miało takie wartości jak shaddow */
+  overflow: hidden;
+}
+
+.booking-comfort {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 1.1rem;
+  /* gdy zdjęcie jest kwadratowe, a shaddow pod zdjęciem okrągłe, to zamiast edytować zdjęcie wystarczy zrobić overflow: hidden i wszystko co nachodziło na shaddow będzie miało takie wartości jak shaddow */
+  overflow: hidden;
+  background-color: #eef3e6;
+  position: relative;
+}
+
+/* Adding yellow label "Best value" */
+
+.booking-comfort::after {
+  content: "Best value";
+  position: absolute;
+  top: 6%;
+  right: -18%;
+  transform: rotate(45deg);
+  /* Aby cut off corners musimy do parent element dodać: overflow: hidden do parent element*/
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
+  padding: 0.8rem 8rem;
+}
+
+/* **** Mooving box **** */
+
+/* .booking:hover {
+  transform: translateY(-1.2rem);
+  transition: all 0.4s;
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+} */
+
+.booking-content {
+  padding: 1.2rem 4.8rem 2.4rem 4.8rem;
+}
+
+.booking-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.free-cancelation {
+  background-color: #75a23a;
+  color: #fff;
+}
+
+.non-refundable {
+  background-color: #d3d1d1;
+}
+
+.booking-img {
+  width: 100%;
+}
+
+.booking-icon {
+  font-size: 2.4rem;
+  color: #777;
+}
+
+.booking-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin: 2.4rem 0 1.2rem 0;
+}
+
+.price {
+  color: #538b09;
+  font-size: 2.8rem;
+}
+
+.booking-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.booking-attribute {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 1.2;
+}
+
+.list-icon {
+  font-size: 3rem;
+  color: #538b09;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* *** BTN *** */
+.btn-place {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+}
+
+/* *** CLOUD TOOLTIP *** */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 90%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -110px;
+  padding: 7px;
+  width: 210px;
+  border-radius: 3px;
+  background-color: #d3d1d1;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 90%;
+  left: 10%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #d3d1d1;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* *************************** */
+/* REVIEWS SECTION */
+/* *************************** */
+
+.review-name {
+  margin-top: 4.8rem;
+}
+.reviews-section {
+  border-top: solid 1px #dde8ce;
+  border-bottom: solid 1px #dde8ce;
+}
+
+.reviews {
+  display: flex;
+  gap: 6.4rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6.4rem;
+  color: #333;
+  margin-top: 2.4rem;
+}
+
+.reviews-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  border-right: solid 1px #333;
+  padding-right: 4.6rem;
+}
+
+.reviews-rating {
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-btm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.reviews-text {
+  font-size: 1.8rem;
+  letter-spacing: 0.15rem;
+}
+
+.revius {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-family: "Genos", sans-serif;
+  margin-left: -1.5rem;
+}
+
+.revius-logo {
+  font-size: 2.8rem;
+  color: #e67e22;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-title,
+.review-score {
+  font-size: 1.8rem;
+}
+
+.review-score {
+  margin-top: -1rem;
+}
+
+.review-icon {
+  font-size: 2.4rem;
+}
+
+/* *** TESTIMONIALS *** */
+
+.section-testimonials {
+  background-color: #fefbf8;
+  display: grid;
+  /* instead of 1fr you can write 55fr 45fr which corresponds to the 55%/45% division */
+  grid-template-columns: 45% 55%;
+  align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+  margin-bottom: 6.4rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  color: #382a1e;
+  font-style: italic;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.guest-box {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  justify-content: centers;
+  align-items: center;
+}
+
+/* STARS */
+.reviews-stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 0 3.2rem 0rem;
+  color: #333;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.star-box {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.star-rating li {
+  list-style: none;
+  color: #f2d2bd;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.review-date {
+  font-size: 1.4rem;
+}
+
+/* *************************** */
+/* THINGS TO KNOW SECTION */
+/* *************************** */
+
+.ttk {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* gap: 1rem; */
+  justify-content: space-between;
+  padding: 0 0 2.4rem 0;
+  color: #333;
+  margin: 3.6rem 0 2.4rem 0;
+}
+
+.title-header {
+  margin-top: 4.8rem;
+}
+
+.tth--column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ttk--title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.ttk--info {
+  font-size: 1.6rem;
+}
+
+/* *************************** */
+/* FOOTER SECTION */
+/* *************************** */
+
+.footer {
+  padding: 10rem 0;
+  /* CREATING A LINE SEPARATING THE FOOTER FROM THE SECTION ABOVE: */
+  border-top: 3.6px solid #eee;
+  background: #fff;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  width: 80%;
+  display: block;
+  margin-bottom: 2.4rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  font-size: 3rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #767676;
+  /* margin-top: auto; */
+  /* IMPORTANT! if we set 'margin-top: auto', we will push the text under 'social-icon' to the very bottom of the box */
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.contact {
+  font-style: normal;
+  line-height: 1.6rem;
+  /* reduced font due to the use of a different font-family */
+  font-size: 1.5rem;
+  color: #767676;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  color: #767676;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #444;
+  font-weight: 500;
+}
+
+/* *************************** */
+/* SOCIAL ICON BAR */
+/* *************************** */
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  /* The codes "top: 50%" and "right: 0" tell us exactly where this element should be displayed. In this case: 50% down from the top of the page and offset by 0 pixels from the right side of the window.  */
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+  color: #538b09;
+  font-size: 32px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  color: #3a6106;
+}
+
+.instagram {
+  background: transparent;
+  color: white;
+}
+
+.facebook {
+  background: transparent;
+  color: white;
+}
+
+.twitter {
+  background: transparent;
+  color: white;
+}
+
+/* *************************** */
+/* *** MODAL WINDOW --> PAYMENT GATEWAY */
+/* *************************** */
+
+.gateway--section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+.gateway-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  min-height: 50vh;
+}
+
+.form-title {
+  margin-bottom: 1.6rem;
+}
+
+.gateway-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 1rem;
+  padding: 20px;
+  width: 800px;
+  background: #fff;
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.gateway-form label {
+  display: block;
+  /* display:block' will line up each element in 'label' */
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.gateway-form input,
+.gateway-form select {
+  width: 100%;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.4rem;
+  font-family: inherit;
+  /* IMPORTANT! 'font-family: inherit' means that the font-family in the fields (which is different than the one we set in the body) will also change to the one used throughout the page - it inherits the feature from the parent element */
+  border: 2px solid #e6e4e4;
+  color: inherit;
+  /* We must use 'inherit' to force the color inside to change to the color specified in 'cta-text-box' */
+  background-color: #fff;
+  /* border-radius: 9px; */
+  margin-top: 0.25rem;
+}
+
+.gateway-form input::placeholder {
+  color: #aaa;
+}
+
+.gateway-form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem rgba(253, 242, 233, 0.5);
+}
+
+.card-box {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.card-box img {
+  width: 70%;
+}
+
+.card-box span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.gateway--section form .checkout-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background: #27ae60;
+  color: #fff;
+  border: 2px solid #27ae60;
+  cursor: pointer;
+  grid-column: 1/-1;
+  margin-top: 1.2rem;
+}
+
+.gateway--section form .checkout-btn:hover {
+  background: #2ecc71;
+  border: 2px solid #2ecc71;
+}
+
+/* *************************** */
+/*        WEBSITE LOADER         */
+/* *************************** */
+
+.loader {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.preloader {
+  background: #333;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.ring {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: ring 2s linear infinite;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px #538b09;
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 1px 5px 2px #333;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 1px 5px 2px #538b09;
+  }
+}
+
+.ring:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.loader span {
+  color: #737373;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 200px;
+  animation: text 3s ease-in-out infinite;
+  font-weight: 500;
+}
+
+@keyframes text {
+  50% {
+    color: #333;
+  }
+}
