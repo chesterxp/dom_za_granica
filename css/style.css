@@ -162,14 +162,14 @@ div#fixed_header {
 
 .hero {
   position: relative;
-  width: 100%;
+  /* width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2rem; */
 }
 
 .hero h1,
@@ -178,8 +178,17 @@ div#fixed_header {
   font-family: Trebuchet MS;
   /* background-color: #fff; */
   z-index: 1;
-  opacity: 0.7;
+  opacity: 0.8;
   padding: 0 2.2rem;
+  text-shadow: 6px 7px 6px #111;
+}
+
+.hero h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .hero-btn {
@@ -192,19 +201,20 @@ div#fixed_header {
   /* width: 100vw;
   height: 100vh; */
   object-fit: cover;
+  width: 100%;
   /* position: fixed; */
   /* left: 0;
   right: 0;
   top: 0;
   bottom: 0; */
-  top: 0;
+  /* top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   margin: auto;
   min-height: 50%;
   min-width: 50%;
-  z-index: -1;
+  z-index: -1; */
 }
 
 h1 {
@@ -215,10 +225,10 @@ h2 {
 }
 
 .video-container {
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; */
 }
 
 .color-overlay {
@@ -228,6 +238,20 @@ h2 {
   background-color: rgba(34, 34, 34, 0.24);
   width: 100%;
   height: 100vh;
+}
+
+.step-image{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 30px;
+  top: -35px;
+  z-index: 10;
+}
+
+.step-image img{
+  width: auto;
+  height: 100%;
 }
 
 /* *************************** */
@@ -407,53 +431,53 @@ h2 {
 
   /* We add 'position: relative' because 'step-img-box' is the parent element to the shape we're adding in '.step-img-box::before' */
   position: relative;
+
+  width: 121px;
+  height: 121px;
+  margin: 0 auto;
 }
 
 .step-img-box::before {
-  content: "";
+    content: "";
   display: block;
-  width: 25%;
-  padding-bottom: 25%;
   background-color: #3a6106;
   border-radius: 50%;
-
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   z-index: 1;
   margin: 1rem;
+  width: 100%;
+  height: 100%;
 }
 
 .step-img-box::after {
-  width: 20%;
+  width: 97px;
   padding-bottom: 20%;
   background-color: #eef3e6;
   content: "";
   display: block;
   border-radius: 50%;
-
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 14px;
+  left: 10px;
   z-index: 2;
+  height: 71px;
 }
 
-.mm-mini-icon1,
+/* .mm-mini-icon1,
 .mm-mini-icon2,
 .mm-mini-icon3 {
   display: block;
   width: 15%;
   padding-bottom: 25%;
-  /* border-radius: 50%; */
   position: absolute;
   top: 42%;
   transform: translate(-50%, -50%);
   z-index: -2;
-}
+} */
 
-.mm-mini-icon1 {
+/* .mm-mini-icon1 {
   left: 43%;
   top: 57%;
   z-index: 3;
@@ -469,7 +493,7 @@ h2 {
   left: 61%;
   top: 57%;
   z-index: 3;
-}
+} */
 
 .plans-link {
   display: flex;
@@ -516,7 +540,8 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 6.4rem;
   row-gap: 9.6rem;
-  width: 100rem;
+  /* width: 100rem; */
+  width: 100%;
 }
 
 .tag-page {
@@ -537,6 +562,22 @@ h2 {
   z-index: 10;
   background-color: #fff;
 }
+
+.page-image{
+  position: absolute;
+  top: -30px;
+  right: 2px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+}
+
+.page-image img{
+  width: auto;
+  height: 100%;
+}
+
+
 
 .one-page {
   border: 2px solid #555;
@@ -700,18 +741,17 @@ h2 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.mm-mini-icon4 {
+/* .mm-mini-icon4 {
   display: block;
   width: 42%;
   padding-bottom: 25%;
-  /* border-radius: 50%; */
   position: absolute;
   transform: translate(-50%, -50%);
   z-index: -2;
   left: 92%;
   top: 4.5%;
   z-index: 3;
-}
+} */
 
 .place-info {
   max-width: 100rem;
@@ -875,11 +915,11 @@ h2 {
 }
 
 .testimonials {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 4.8rem;
   column-gap: 8rem;
-  margin-bottom: 6.4rem;
+  margin-bottom: 6.4rem; */
 }
 
 .testimonial-img {
@@ -899,6 +939,10 @@ h2 {
 .testimonial-name {
   font-size: 1.6rem;
   color: #6f6f6f;
+}
+
+.testimonial{
+  width: 500px;
 }
 
 /* *** GALLERY *** */
@@ -1241,13 +1285,21 @@ h2 {
   padding: 9.6rem;
 }
 
-.testimonials {
-  display: grid;
+/* .testimonials { */
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 4.8rem;
   column-gap: 8rem;
   margin-bottom: 6.4rem;
+} */
+
+.testimonials{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  gap: 20px;
 }
+
 
 .testimonial-img {
   width: 6.4rem;
@@ -1273,6 +1325,7 @@ h2 {
   grid-template-columns: 15% 85%;
   justify-content: centers;
   align-items: center;
+  width: 500px;
 }
 
 /* STARS */
@@ -1517,6 +1570,8 @@ aside {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  background: #00000038;
+  border-radius: 30px;
 }
 
 /* Style the icon bar links */

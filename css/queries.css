@@ -47,9 +47,9 @@
     height: 100%;
   }
 
-  .hero {
+  /* .hero {
     height: 75vh;
-  }
+  } */
 
   /* MAIN SECTION */
   .section-main {
@@ -131,9 +131,9 @@
 
   /* VIDEO SECTION */
 
-  .hero {
+  /* .hero {
     height: 55vh;
-  }
+  } */
 
   .hero-btn {
     font-size: smaller;
@@ -224,9 +224,9 @@
 @media (max-width: 44em) {
   /* VIDEO SECTION */
 
-  .hero {
+  /* .hero {
     height: 40vh;
-  }
+  } */
 
   /* MAIN SECTION */
 
@@ -438,9 +438,9 @@
 
   /* VIDEO SECTION */
 
-  .hero {
+  /* .hero {
     height: 30vh;
-  }
+  } */
 
   /* MAIN SECTION */
 
