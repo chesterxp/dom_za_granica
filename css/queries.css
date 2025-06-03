@@ -228,6 +228,10 @@
     height: 40vh;
   } */
 
+  .hero h1{
+    white-space: normal;
+  }
+
   /* MAIN SECTION */
 
   .heading-primary {
