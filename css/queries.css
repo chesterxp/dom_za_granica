@@ -223,6 +223,9 @@
 /* 704px/16 = 44em */
 @media (max-width: 44em) {
   /* VIDEO SECTION */
+  body{
+    overflow-x: hidden;
+  }
 
   /* .hero {
     height: 40vh;

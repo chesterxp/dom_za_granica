@@ -220,3 +220,21 @@ btnNavEl.addEventListener("click", function () {
 });
 
 // toggle will be looking for the headerEl element that has "nav-open" and if it is not there it will add it, and if it is there it will remove it. In this case, we add the class name without a dot in front.
+
+
+
+function isMobileDevice() {
+  return window.matchMedia("(max-width: 600px)").matches;
+}
+
+function changeSliderDetails() {
+  const slider1 = document.querySelector('#slider1');
+  slider1.style.setProperty('--width', '300px');
+  slider1.style.setProperty('--height', '200px');
+}
+
+const isMobile = isMobileDevice();
+
+if (isMobile) {
+  changeSliderDetails();
+}

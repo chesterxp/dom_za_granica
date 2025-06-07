@@ -914,37 +914,6 @@ h2 {
   line-height: 1.6;
 }
 
-.testimonials {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 4.8rem;
-  column-gap: 8rem;
-  margin-bottom: 6.4rem; */
-}
-
-.testimonial-img {
-  width: 6.4rem;
-  border-radius: 50%;
-  margin-bottom: 1.2rem;
-}
-
-.testimonial-text {
-  font-size: 1.8rem;
-  line-height: 1.8;
-  margin-bottom: 1.6rem;
-  color: #382a1e;
-  font-style: italic;
-}
-
-.testimonial-name {
-  font-size: 1.6rem;
-  color: #6f6f6f;
-}
-
-.testimonial{
-  width: 500px;
-}
-
 /* *** GALLERY *** */
 
 .gallery {
@@ -1272,34 +1241,58 @@ h2 {
 }
 
 /* *** TESTIMONIALS *** */
-
-.section-testimonials {
-  background-color: #fefbf8;
-  display: grid;
-  /* instead of 1fr you can write 55fr 45fr which corresponds to the 55%/45% division */
-  grid-template-columns: 45% 55%;
-  align-items: center;
-}
-
 .testimonials-container {
   padding: 9.6rem;
 }
 
-/* .testimonials { */
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 4.8rem;
-  column-gap: 8rem;
-  margin-bottom: 6.4rem;
-} */
+.sliderCSS{
+  height: var(--height);
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #333 10% 90%,
+    transparent
+  );
+}
+
+.sliderCSS:hover .testimonial{
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+.sliderCSS .testimonial:hover{
+  filter: grayscale(0);
+}
 
 .testimonials{
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  gap: 20px;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
 }
 
+.testimonial{
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 25%;
+  animation: autoRun var(--time) linear infinite;
+  animation-delay: calc((var(--time) / var(--quantity)) * (var(--position) - 1) - var(--time)) !important;
+  transition: filter 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
 
 .testimonial-img {
   width: 6.4rem;
@@ -1308,7 +1301,7 @@ h2 {
 }
 
 .testimonial-text {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.8;
   margin-bottom: 1.6rem;
   color: #382a1e;
@@ -1320,12 +1313,13 @@ h2 {
   color: #6f6f6f;
 }
 
+
 .guest-box {
   display: grid;
   grid-template-columns: 15% 85%;
-  justify-content: centers;
+  justify-content: center;
   align-items: center;
-  width: 500px;
+  /* width: 500px; */
 }
 
 /* STARS */
@@ -1581,6 +1575,7 @@ aside {
   padding: 5px 15px;
   transition: all 0.3s ease;
   /* color: #538b09; */
+  color: #fff;
   font-size: 32px;
 }
 
