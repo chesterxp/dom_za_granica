@@ -1,2 +1,4 @@
 /notes
-.vscode
+/.vscode
+/.github
+/node_modules

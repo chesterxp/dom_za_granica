@@ -4,11 +4,9 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-modal");
 const btnsOpenModal = document.querySelectorAll(".show-modal");
-console.log(btnsOpenModal);
 
 for (let i = 0; i < btnsOpenModal.length; i++)
   btnsOpenModal[i].addEventListener("click", function () {
-    console.log("Button clicked");
     // Removing 'hidden' class from Modal
     modal.classList.remove("hidden");
     // Removing 'hidden' class from Overlay
@@ -28,8 +26,6 @@ overlay.addEventListener("click", function () {
 
 // Button ESC closing Modal
 document.addEventListener("keydown", function (e) {
-  console.log(e.key);
-
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
@@ -213,28 +209,144 @@ datePickerId.min = new Date().toLocaleDateString("fr-ca");
 // MAKE MOBILE NAVIGATION WORK
 
 const btnNavEl = document.querySelector(".btn-mobile-nav");
-const headerEl = document.querySelector(".header");
+
 
 btnNavEl.addEventListener("click", function () {
-  headerEl.classList.toggle("nav-open");
+  showHideNavigation();
 });
+
+function showHideNavigation() {
+  const headerEl = document.querySelector(".header");
+  headerEl.classList.toggle("nav-open");
+}
 
 // toggle will be looking for the headerEl element that has "nav-open" and if it is not there it will add it, and if it is there it will remove it. In this case, we add the class name without a dot in front.
 
 
+var websiteLoader = document.getElementById('preloader');
 
+window.addEventListener(
+  'load',
+  function (load) {
+    window.removeEventListener('load', load, false);
+
+    setTimeout(function () {
+      websiteLoader.style.display = 'none';
+    }, 1500);
+  },
+  false
+);
+
+//zebranie i wysłanie danych z formularza
+function addFormEvent() {
+    const form = document.getElementById('contanct__form');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      const country = formData.get('country');
+      const destination = formData.get('destination');
+      const allProperty = formData.getAll('property_type'); // checkbox: zwróci tablicę
+      const propertyTypes = allProperty.length == 1 ? allProperty[0] : allProperty.join(', ');
+      const maxPrice = formData.get('max_price');
+      const comments = formData.get('comments');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const time = new Date();
+
+      const params = {
+        name: 'Autoamt',
+        message: 'Dane formularza',
+        country,
+        destination,
+        propertyTypes: String(propertyTypes),
+        maxPrice,
+        comments,
+        email,
+        time: String(time).replace(/TZ/, ' '),
+        phone
+      };
+
+      console.log('params:', params);
+
+      emailjs.send('service_qir66go', 'template_drcr2gp', params).then(showHideFormPopup('show'));
+      form.reset();
+    });
+}
+//zmiana wartości slidera dla wersji mobilnej
+function changeSliderProps() {
+
+  
+  const slider1 = document.querySelector('#slider1');
+  if (!slider1) return;
+  
+  const screenWidth = window.innerWidth;
+  console.log('changeSliderProps', screenWidth);
+  let details = {};
+
+  if(screenWidth > 600) {
+    details = {
+      width: '500px',
+      height: '371px',
+      time: '10s'
+    }
+  } else {
+    details = {
+      width: '300px',
+      height: '200px',
+      time: '20s'
+    }
+  }
+
+  slider1.style.setProperty('--width', details.width);
+  slider1.style.setProperty('--height', details.height);
+  slider1.style.setProperty('--time', details.time);
+}
+//zamknięcie popupa po wysłaniu danych
+function addEventForFromPopup() {
+  const btn = document.querySelector('.form__popupButton');
+
+  btn.addEventListener('click', () => {
+    showHideFormPopup('hide')
+  });
+}
+//sprawdzenie czy urzadzenie jest mobilne
 function isMobileDevice() {
   return window.matchMedia("(max-width: 600px)").matches;
 }
+//pokazanie lub schowanie popupa dla formularza
+function showHideFormPopup(type) {
+  const popup= document.querySelector('.form__popup');
 
-function changeSliderDetails() {
-  const slider1 = document.querySelector('#slider1');
-  slider1.style.setProperty('--width', '300px');
-  slider1.style.setProperty('--height', '200px');
+  if(type === 'show') {
+    popup.style.opacity = '1';
+    popup.style.zIndex = '100';
+  } else {
+    popup.style.opacity = '0';
+    popup.style.zIndex = '-1';
+  }
+
+
+  console.log('popup:', popup);
+  console.log('type:', type);
+}
+//dodanie eventu na zesize przeglądarki
+function addEventForResize() {
+  window.addEventListener('resize', () => changeSliderProps());
 }
 
-const isMobile = isMobileDevice();
-
-if (isMobile) {
-  changeSliderDetails();
+//dodanie eventu w linkach nawigacji
+function addEventForLinks() {
+  const links = document.querySelectorAll('.main-nav-link');
+  links.forEach((link) => {
+    link.addEventListener('click', () => showHideNavigation());
+  });
 }
+
+changeSliderProps();
+addEventForResize();
+addFormEvent();
+addEventForFromPopup();
+addEventForLinks();
