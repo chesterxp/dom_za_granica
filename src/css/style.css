@@ -1173,9 +1173,9 @@ h2 {
 
 /* **** Mooving box **** */
 
-.booking-content {
+/* .booking-content {
   padding: 1.2rem 2.4rem 2.4rem 2.4rem;
-}
+} */
 
 .booking-tags {
   margin-bottom: 1.2rem;
@@ -2368,6 +2368,14 @@ aside {
     width: 100%;
   }
 
+  .attribute-title{
+    font-size: 24px;
+  }
+
+  .booking-attribute span{
+    font-size: 18px;
+  }
+
 }
 
 @media screen and (min-width: 705px){
@@ -2386,7 +2394,11 @@ aside {
 /* 550px/16 = 34em */
 @media (max-width: 34em) {
   html {
-    font-size: 34%;
+    font-size: 7px;
+  }
+
+  body{
+    font-size: 16px;
   }
 
   .logo {
@@ -2429,9 +2441,9 @@ aside {
     padding: 0 20px;
   }
 
-  .booking-content {
+  /* .booking-content {
     padding: 1.2rem 8em 2.4rem 10rem;
-  }
+  } */
 
   /* REVIEW SECTION */
 

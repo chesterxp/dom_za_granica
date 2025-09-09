@@ -5,13 +5,13 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-modal");
 const btnsOpenModal = document.querySelectorAll(".show-modal");
 
-for (let i = 0; i < btnsOpenModal.length; i++)
-  btnsOpenModal[i].addEventListener("click", function () {
-    // Removing 'hidden' class from Modal
-    modal.classList.remove("hidden");
-    // Removing 'hidden' class from Overlay
-    overlay.classList.remove("hidden");
-  });
+// for (let i = 0; i < btnsOpenModal.length; i++)
+//   btnsOpenModal[i].addEventListener("click", function () {
+//     // Removing 'hidden' class from Modal
+//     modal.classList.remove("hidden");
+//     // Removing 'hidden' class from Overlay
+//     overlay.classList.remove("hidden");
+//   });
 
 // Closing Modal by 'X button':
 btnCloseModal.addEventListener("click", function () {
